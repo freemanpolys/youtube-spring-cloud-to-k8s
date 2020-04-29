@@ -1,0 +1,12 @@
+spring:
+  application:
+    name:  gateway
+  cloud:
+    consul:
+      discovery:
+        serviceName: ${spring.application.name}
+        instanceId: ${spring.application.name}:${random.value}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 20s
+      host: localhost
+      port: 8500
