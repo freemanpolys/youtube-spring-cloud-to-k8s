@@ -1,4 +1,8 @@
 spring:
+  data:
+    mongodb:
+      database: country-continent-flag
+      uri: mongodb://admin:admin@192.168.50.1:27017/country-continent-flag?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
   application:
     name:  continent-flag
   cloud:
@@ -12,6 +16,8 @@ spring:
       port: 8500
     config:
       uri: http://localhost:8888
+
+
 
 management:
   endpoints:
