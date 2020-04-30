@@ -25,4 +25,5 @@ curl http://localhost:8800/continent-flag/default/master
 
 # Request continent
 curl http://localhost:8082/actuator/refresh -d {} -H "Content-Type: application/json"
-curl http://localhost:8082/conflag/continent
+curl http://localhost:8082/srvcfla/country
+curl http://localhost:8082/srvcfla/flag

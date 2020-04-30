@@ -2,6 +2,7 @@ package com.mygglo.countrycontinentflag.controller;
 
 import com.mygglo.countrycontinentflag.domain.ApiResponse;
 import com.mygglo.countrycontinentflag.domain.Continent;
+import com.mygglo.countrycontinentflag.domain.Flag;
 import com.mygglo.countrycontinentflag.domain.dto.Country;
 import com.mygglo.countrycontinentflag.service.CountryService;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +18,7 @@ import java.util.List;
  * Created by James Kokou GAGLO on 30/04/2020.
  */
 @RestController
-@RequestMapping("/conflag")
+@RequestMapping("/srvcfla")
 @RefreshScope
 public class CountryController {
     @Value("${country}")
@@ -29,9 +30,15 @@ public class CountryController {
         this.countryService = countryService;
     }
 
-    @GetMapping("/continent")
+    @GetMapping("/country")
     ResponseEntity<ApiResponse<Country>> getCountry() {
         ApiResponse<Country> response = new ApiResponse(this.countryService.findByCountryName(country));
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/flag")
+    ResponseEntity<ApiResponse<Flag>> getFlag() {
+        ApiResponse<Flag> response = new ApiResponse(this.countryService.getCountryFlag(country));
         return ResponseEntity.ok(response);
     }
 }

@@ -39,4 +39,10 @@ public class CountryService {
 
         return continentFlagToCountry.apply(continent,flag);
     }
+
+    public Flag getCountryFlag(String country) {
+        Flag flag = flagRepository.findFirstByCountry(country).orElse( new Flag());
+        log.info("== fetch flag {} ==",flag);
+        return flag;
+    }
 }
