@@ -1,6 +1,6 @@
 spring:
   application:
-    name: configserver
+    name: cloud-config
   cloud:
     config:
       server:
@@ -16,4 +16,4 @@ spring:
       host: localhost
       port: 8500
 server:
-  port: 8888
+  port: 8800
