@@ -1,6 +1,6 @@
 spring:
   application:
-    name:  country-continent-flag
+    name:  continent-flag
   cloud:
     consul:
       discovery:
@@ -10,6 +10,17 @@ spring:
         healthCheckInterval: 20s
       host: localhost
       port: 8500
+    config:
+      uri: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 
 server:
   port: 8082
+
+
