@@ -1,10 +1,9 @@
 package com.mygglo.countrycontinentflag.domain;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
 
 /**
  * Created by James Kokou GAGLO on 30/04/2020.
@@ -12,10 +11,7 @@ import org.springframework.data.annotation.Id;
 @Getter
 @Setter
 @ToString
-public class Continent {
-    @Id
-    private String id;
-    private String country;
-    private String continent;
-
+@AllArgsConstructor
+public class ApiResponse<T> {
+    private T result;
 }
