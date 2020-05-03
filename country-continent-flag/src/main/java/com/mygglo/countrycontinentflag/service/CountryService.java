@@ -2,7 +2,7 @@ package com.mygglo.countrycontinentflag.service;
 
 import com.mygglo.countrycontinentflag.domain.Continent;
 import com.mygglo.countrycontinentflag.domain.Flag;
-import com.mygglo.countrycontinentflag.domain.dto.Country;
+import com.mygglo.countrycontinentflag.domain.dto.CountryDTO;
 import com.mygglo.countrycontinentflag.domain.mapper.ContinentFlagToCountry;
 import com.mygglo.countrycontinentflag.repository.ContinentRepository;
 import com.mygglo.countrycontinentflag.repository.FlagRepository;
@@ -27,7 +27,7 @@ public class CountryService {
         this.continentFlagToCountry = continentFlagToCountry;
     }
 
-    public Country findByCountryName(String country) {
+    public CountryDTO findByCountryName(String country) {
         log.info("== fetch country {} ==",country);
         Continent continent = continentRepository.findFirstByCountry(country).orElse(new Continent());
         log.info("== fetch continent {} ==",continent);

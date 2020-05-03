@@ -2,6 +2,8 @@ package com.mygglo.countrylangpopulation.controller;
 
 import com.mygglo.countrylangpopulation.domain.ApiResponse;
 import com.mygglo.countrylangpopulation.domain.Population;
+import com.mygglo.countrylangpopulation.feign.Flag;
+import com.mygglo.countrylangpopulation.service.CountryFlagService;
 import com.mygglo.countrylangpopulation.service.PopulationService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -20,15 +22,17 @@ public class PopulationController {
     @Value("${country}")
     private String country;
     private final PopulationService populationService;
+    private final CountryFlagService countryFlagService;
 
-
-    public PopulationController(PopulationService populationService) {
+    public PopulationController(PopulationService populationService, CountryFlagService countryFlagService) {
         this.populationService = populationService;
+        this.countryFlagService = countryFlagService;
     }
 
     @GetMapping("/population")
     public ResponseEntity<ApiResponse<Population>> getPopulation() {
-        ApiResponse<Population> response = new ApiResponse<>(this.populationService.getPopulationByCountry(country));
+        Flag flag = this.countryFlagService.fetchFlag(country);
+        ApiResponse<Population> response = new ApiResponse<>(this.populationService.getPopulationByCountry(country),flag.getFlagBase64());
         return ResponseEntity.ok().body(response);
     }
 }

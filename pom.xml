@@ -20,8 +20,8 @@
     <modules>
         <module>config-server</module>
         <module>gateway</module>
-        <module>country-lang-population</module>
-        <module>country-continent-flag</module>
+        <module>countryDTO-lang-population</module>
+        <module>countryDTO-continent-flag</module>
     </modules>
     <dependencies>
         <dependency>

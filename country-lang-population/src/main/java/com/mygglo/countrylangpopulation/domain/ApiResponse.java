@@ -14,4 +14,5 @@ import lombok.ToString;
 @AllArgsConstructor
 public class ApiResponse<T> {
     private T result;
+    private String flagBase64;
 }

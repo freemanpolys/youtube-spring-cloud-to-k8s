@@ -1,13 +1,13 @@
 # Data
-https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-continent.json
+https://raw.githubusercontent.com/samayo/countryDTO-json/master/src/countryDTO-by-continent.json
 
 # Mongo and Consul
 Run "docker-compose up -d" command in the base folder
 Pour initialiser la base de données
-mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db country-continent-flag --collection continent --file data/country-by-continent.json 
-mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db country-continent-flag --collection flag --file data/country-by-flag.json
-mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db country-lang-population --collection population --file data/country-by-population.json
-mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db country-lang-population --collection language --file data/country-by-languages.json
+mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db countryDTO-continent-flag --collection continent --file data/countryDTO-by-continent.json 
+mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db countryDTO-continent-flag --collection flag --file data/countryDTO-by-flag.json
+mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db countryDTO-lang-population --collection population --file data/countryDTO-by-population.json
+mongoimport --host localhost --username admin --password admin  --authenticationDatabase admin --jsonArray  --db countryDTO-lang-population --collection language --file data/countryDTO-by-languages.json
 
 
 # Config Server
@@ -24,8 +24,8 @@ curl http://localhost:8800/continent-flag/default/master
 
 # Request continent and flag
 curl http://localhost:8082/actuator/refresh -d {} -H "Content-Type: application/json"
-curl http://localhost:8082/srvcfla/country
-curl http://localhost:8082/srvcfla/flag
+curl http://localhost:8082/srvcfla/countryDTO
+ curl http://localhost:8082/srvcfla/flag/Senegal
 
 #Request language and population
  curl http://localhost:8083/srvlapo/lang

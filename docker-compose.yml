@@ -1,0 +1,13 @@
+version: '3'
+services:
+  consul:
+    image: consul
+    ports:
+      - "8500:8500"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+  mongo:
+    image: freemanpolys/youtube-mongo
+    ports:
+      - "27017:27017"

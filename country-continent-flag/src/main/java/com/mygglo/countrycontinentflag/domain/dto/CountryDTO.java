@@ -12,8 +12,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class Country {
+public class CountryDTO {
     private String country;
     private String continent;
-    private String flag;
+    private String flagBase64;
 }

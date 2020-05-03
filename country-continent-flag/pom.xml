@@ -9,9 +9,9 @@
 		<relativePath>..</relativePath>
 	</parent>
 
-	<artifactId>country-continent-flag</artifactId>
+	<artifactId>countryDTO-continent-flag</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>country-continent-flag</name>
+	<name>countryDTO-continent-flag</name>
 	<description>Country Continent and Flag</description>
 
 	<properties>
