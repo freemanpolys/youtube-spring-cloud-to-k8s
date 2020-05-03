@@ -19,6 +19,7 @@ public class PopulationService {
     }
 
     public Population getPopulationByCountry(String country) {
+        log.info("== fetch country {} population ==",country);
         return this.populationRepository
                 .findFirstByCountry(country)
                 .orElse(new Population());

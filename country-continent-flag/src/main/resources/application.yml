@@ -2,7 +2,7 @@ spring:
   data:
     mongodb:
       database: country-continent-flag
-      uri: mongodb://admin:admin@192.168.50.1:27017/country-continent-flag?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
+      uri: mongodb://admin:admin@192.168.50.1:27017/?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
   application:
     name:  continent-flag
   cloud:
@@ -29,4 +29,11 @@ management:
 server:
   port: 8082
 
-
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

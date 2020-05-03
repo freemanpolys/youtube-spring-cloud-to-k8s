@@ -11,7 +11,7 @@ import org.springframework.data.annotation.Id;
 @Getter
 @Setter
 @ToString
-public class Lang {
+public class Language {
     @Id
     private String id;
     private String country;

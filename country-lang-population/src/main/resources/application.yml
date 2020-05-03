@@ -1,9 +1,8 @@
-
 spring:
   data:
     mongodb:
-      database: country-continent-flag
-      uri: mongodb://admin:admin@192.168.50.1:27017/country-lang-population?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
+      database: country-lang-population
+      uri: mongodb://admin:admin@192.168.50.1:27017/?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
   application:
     name:  lang-population
   cloud:
@@ -23,3 +22,13 @@ management:
     web:
       exposure:
         include: "*"
+
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

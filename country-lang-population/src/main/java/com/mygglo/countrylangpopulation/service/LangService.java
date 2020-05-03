@@ -1,10 +1,12 @@
 package com.mygglo.countrylangpopulation.service;
 
-import com.mygglo.countrylangpopulation.domain.Lang;
-import com.mygglo.countrylangpopulation.repository.LangRepository;
+import com.mygglo.countrylangpopulation.domain.Language;
+import com.mygglo.countrylangpopulation.repository.LanguageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by James Kokou GAGLO on 03/05/2020.
@@ -12,16 +14,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class LangService {
     private final static Logger log = LoggerFactory.getLogger(LangService.class);
-    private final LangRepository langRepository;
+    private final LanguageRepository languageRepository;
 
-    public LangService(LangRepository langRepository) {
-        this.langRepository = langRepository;
+    public LangService(LanguageRepository languageRepository) {
+        this.languageRepository = languageRepository;
     }
 
-    public Lang getLangByCountry(String country) {
-        return this.langRepository
-                .findFirstByCountry(country)
-                .orElse(new Lang());
+    public List<Language> getLangByCountry(String country) {
+        log.info("== fetch country {} lang ==",country);
+        return this.languageRepository
+               .findAllByCountry(country);
+        //return this.langRepository.findAll();
     }
 
 }
