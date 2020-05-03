@@ -6,9 +6,9 @@
 		<groupId>com.mygglo</groupId>
 		<artifactId>spring-cloud</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath>..</relativePath>
 	</parent>
-	<groupId>com.mygglo</groupId>
+
 	<artifactId>country-continent-flag</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>country-continent-flag</name>
