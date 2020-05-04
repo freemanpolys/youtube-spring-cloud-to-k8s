@@ -2,6 +2,7 @@ package com.mygglo.countrylangpopulation.controller;
 
 import com.mygglo.countrylangpopulation.domain.ApiResponse;
 import com.mygglo.countrylangpopulation.domain.Population;
+import com.mygglo.countrylangpopulation.domain.dto.PopulationDTO;
 import com.mygglo.countrylangpopulation.feign.Flag;
 import com.mygglo.countrylangpopulation.service.CountryFlagService;
 import com.mygglo.countrylangpopulation.service.PopulationService;
@@ -30,9 +31,9 @@ public class PopulationController {
     }
 
     @GetMapping("/population")
-    public ResponseEntity<ApiResponse<Population>> getPopulation() {
+    public ResponseEntity<ApiResponse<PopulationDTO>> getPopulation() {
         Flag flag = this.countryFlagService.fetchFlag(country);
-        ApiResponse<Population> response = new ApiResponse<>(this.populationService.getPopulationByCountry(country),flag.getFlagBase64());
+        ApiResponse<PopulationDTO> response = new ApiResponse<>(this.populationService.getPopulationByCountry(country),flag.getFlagBase64());
         return ResponseEntity.ok().body(response);
     }
 }

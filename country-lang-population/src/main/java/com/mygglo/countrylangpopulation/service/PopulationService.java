@@ -1,10 +1,13 @@
 package com.mygglo.countrylangpopulation.service;
 
 import com.mygglo.countrylangpopulation.domain.Population;
+import com.mygglo.countrylangpopulation.domain.dto.PopulationDTO;
 import com.mygglo.countrylangpopulation.repository.PopulationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 /**
  * Created by James Kokou GAGLO on 03/05/2020.
@@ -18,10 +21,12 @@ public class PopulationService {
         this.populationRepository = populationRepository;
     }
 
-    public Population getPopulationByCountry(String country) {
+    public PopulationDTO getPopulationByCountry(String country) {
         log.info("== fetch country {} population ==",country);
-        return this.populationRepository
+        PopulationDTO populationDTO = new PopulationDTO("");
+        this.populationRepository
                 .findFirstByCountry(country)
-                .orElse(new Population());
+                .ifPresent(population -> populationDTO.setPopulation(population.getPopulation()));
+        return populationDTO;
     }
 }

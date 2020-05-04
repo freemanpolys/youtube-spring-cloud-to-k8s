@@ -2,6 +2,7 @@ package com.mygglo.countrylangpopulation.controller;
 
 import com.mygglo.countrylangpopulation.domain.ApiResponse;
 import com.mygglo.countrylangpopulation.domain.Language;
+import com.mygglo.countrylangpopulation.domain.dto.LanguageDTO;
 import com.mygglo.countrylangpopulation.feign.Flag;
 import com.mygglo.countrylangpopulation.service.CountryFlagService;
 import com.mygglo.countrylangpopulation.service.LangService;
@@ -32,9 +33,9 @@ public class LangController {
     }
 
     @GetMapping("/lang")
-    public ResponseEntity<ApiResponse<List<Language>>> getLang() {
+    public ResponseEntity<ApiResponse<List<LanguageDTO>>> getLang() {
         Flag flag = this.countryFlagService.fetchFlag(country);
-        ApiResponse<List<Language>> response = new ApiResponse<>(this.langService.getLangByCountry(country),flag.getFlagBase64());
+        ApiResponse<List<LanguageDTO>> response = new ApiResponse<>(this.langService.getLangByCountry(country),flag.getFlagBase64());
         return ResponseEntity.ok().body(response);
     }
 }
