@@ -9,9 +9,9 @@
 		<relativePath>..</relativePath>
 	</parent>
 
-	<artifactId>countryDTO-lang-population</artifactId>
+	<artifactId>country-lang-population</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>countryDTO-lang-population</name>
+	<name>country-lang-population</name>
 	<description>Country Lang and Population</description>
 
 	<dependencies>
