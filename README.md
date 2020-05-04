@@ -24,11 +24,15 @@ curl http://localhost:8800/continent-flag/default/master
 
 # Request continent and flag
 curl http://localhost:8082/actuator/refresh -d {} -H "Content-Type: application/json"
-curl http://localhost:8082/srvcfla/countryDTO
- curl http://localhost:8082/srvcfla/flag/Senegal
+curl http://localhost:8082/srvcfla/country
+curl http://localhost:8082/srvcfla/flag/Senegal
 
 #Request language and population
  curl http://localhost:8083/srvlapo/lang
  curl http://localhost:8083/srvlapo/population
-
-
+ 
+#Gateway
+curl http://localhost:8080/srvcfla/country
+curl http://localhost:8080/srvcfla/flag/Senegal
+curl http://localhost:8080/srvlapo/lang
+curl http://localhost:8080/srvlapo/population

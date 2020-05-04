@@ -10,3 +10,13 @@ spring:
         healthCheckInterval: 20s
       host: localhost
       port: 8500
+    gateway:
+      routes:
+        - id: continent-lag
+          uri: lb://continent-flag
+          predicates:
+            - Path=/srvcfla/**
+        - id: lang-population
+          uri: lb://lang-population
+          predicates:
+            - Path=/srvlapo/**
