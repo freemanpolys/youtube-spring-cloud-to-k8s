@@ -11,6 +11,11 @@ spring:
       host: localhost
       port: 8500
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
       routes:
         - id: continent-lag
           uri: lb://continent-flag
