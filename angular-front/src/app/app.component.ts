@@ -11,8 +11,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class AppComponent implements OnInit{
   title = 'angular-front';
   public  country : Country;
-  public flagBase64;
   public population;
+  public popLangFlagBase64;
   public languages : any[];
 
   constructor(private countryService: CountryService,private domSanitizer: DomSanitizer) {
@@ -21,13 +21,13 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.countryService.getCountry().subscribe( res => {
       this.country = res.result;
-      this.flagBase64 = this.domSanitizer.bypassSecurityTrustUrl(this.country.flagBase64);
+      this.country.flagBase64 = this.domSanitizer.bypassSecurityTrustUrl(this.country.flagBase64);
 
     });
 
     this.countryService.getPopulation().subscribe( res => {
       this.population = res.result["population"];
-      console.log("====== " + JSON.stringify(this.population));
+      this.popLangFlagBase64 =  this.domSanitizer.bypassSecurityTrustUrl(res.flagBase64);
     });
 
     this.countryService.getLang().subscribe( res => {

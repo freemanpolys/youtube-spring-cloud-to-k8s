@@ -318,15 +318,15 @@
 <div class="content" role="main">
 
   <section style="margin-bottom: 30px">
-    <img [src] ="flagBase64"/>
-    <div>{{ country.country }}</div>
+    <img [src] ="country.flagBase64" width="150px"/>
+    <div class="text-center">{{ country.country }}</div>
   </section>
   <section class="jumbotron text-center" >
-      <h2>Population</h2>
-      <strong>{{ population }}</strong>
+      <h2>Population <img [src]="popLangFlagBase64" width="20px"/></h2>
+      <strong>{{ population | number}}</strong>
 
 
-      <h2>Langues</h2>
+      <h2>Langues  <img [src]="popLangFlagBase64" width="20px"/></h2>
       <div class="row">
         <div  *ngFor="let language of languages" style="margin-right: 10px">
           <label class="badge badge-success inline-block" style="font-size: 20px">{{language.language}}</label>
