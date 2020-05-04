@@ -1,6 +1,5 @@
 package com.mygglo.countrylangpopulation.service;
 
-import com.mygglo.countrylangpopulation.domain.Language;
 import com.mygglo.countrylangpopulation.domain.dto.LanguageDTO;
 import com.mygglo.countrylangpopulation.repository.LanguageRepository;
 import org.slf4j.Logger;

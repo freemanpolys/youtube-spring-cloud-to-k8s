@@ -1,7 +1,6 @@
 package com.mygglo.countrylangpopulation.controller;
 
 import com.mygglo.countrylangpopulation.domain.ApiResponse;
-import com.mygglo.countrylangpopulation.domain.Language;
 import com.mygglo.countrylangpopulation.domain.dto.LanguageDTO;
 import com.mygglo.countrylangpopulation.feign.Flag;
 import com.mygglo.countrylangpopulation.service.CountryFlagService;
