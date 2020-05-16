@@ -51,5 +51,8 @@ Run mvn package in the base folder  \
 
 
   java -jar gateway/target/gateway-0.0.1-SNAPSHOT.jar
+  
+ #Rehost
+ mvn compile jib:build
 
  
