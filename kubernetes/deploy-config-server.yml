@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configserver
+  namespace: spring-cloud
+  labels:
+    app: configserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configserver
+  template:
+    metadata:
+      labels:
+        app: configserver
+    spec:
+      containers:
+        - name: configserver
+          image: registry.labs:5000/config-server:1.0.0
+          env:
+            - name: SPRING_CLOUD_CONSUL_HOST
+              value: "consul"
+            - name: SPRING_CLOUD_CONSUL_DISCOVERY_PREFER-IP-ADDRESS
+              value: "true"
+          ports:
+            - containerPort: 8800

@@ -54,5 +54,10 @@ Run mvn package in the base folder  \
   
  #Rehost
  mvn compile jib:build
+ 
+curl http://gateway.mygglo.com/srvcfla/country   \
+curl http://gateway.mygglo.com/srvcfla/flag/Senegal   \
+curl http://gateway.mygglo.com/srvlapo/lang   \
+curl http://gateway.mygglo.com/srvlapo/population
 
  

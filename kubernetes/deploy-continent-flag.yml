@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: continent-flag
+  namespace: spring-cloud
+  labels:
+    app: continent-flag
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: continent-flag
+  template:
+    metadata:
+      labels:
+        app: continent-flag
+    spec:
+      containers:
+        - name: continent-flag
+          image: registry.labs:5000/country-continent-flag:1.0.1
+          env:
+            - name: SPRING_CLOUD_CONSUL_HOST
+              value: "consul"
+            - name: SPRING_CLOUD_CONSUL_DISCOVERY_PREFER-IP-ADDRESS
+              value: "true"
+          ports:
+            - containerPort: 8082

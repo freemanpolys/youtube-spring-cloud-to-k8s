@@ -38,7 +38,7 @@
 				<configuration>
 					<allowInsecureRegistries>true</allowInsecureRegistries>
 					<to>
-						<image>registry.labs:5000/country-continent-flag:1.0.0</image>
+						<image>registry.labs:5000/country-continent-flag:1.0.1</image>
 					</to>
 				</configuration>
 			</plugin>
