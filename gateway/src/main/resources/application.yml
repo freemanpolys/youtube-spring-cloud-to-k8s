@@ -8,6 +8,7 @@ spring:
         instanceId: ${spring.application.name}:${random.value}
         healthCheckPath: /actuator/health
         healthCheckInterval: 20s
+        pre
       host: 192.168.50.1
       port: 8500
     gateway:
