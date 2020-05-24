@@ -1,7 +1,7 @@
-spring:
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: cloud-config
-      fail-fast: true
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: cloud-config
+#      fail-fast: true

@@ -5,18 +5,17 @@ spring:
       uri: mongodb://admin:admin@mongo-service:27017/?ssl=false&authSource=admin&authMechanism=SCRAM-SHA-1
   application:
     name:  continent-flag
-  cloud:
-    consul:
-      discovery:
-        serviceName: ${spring.application.name}
-        instanceId: ${spring.application.name}:${random.value}
-        healthCheckPath: /actuator/health
-        healthCheckInterval: 20s
-      host: 192.168.50.1
-      port: 8500
-    config:
-      uri: http://localhost:8888
-
+#  cloud:
+#    consul:
+#      discovery:
+#        serviceName: ${spring.application.name}
+#        instanceId: ${spring.application.name}:${random.value}
+#        healthCheckPath: /actuator/health
+#        healthCheckInterval: 20s
+#      host: 192.168.50.1
+#      port: 8500
+#    config:
+#      uri: http://localhost:8888
 
 
 management:
