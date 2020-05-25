@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 /**
  * Created by James Kokou GAGLO on 03/05/2020.
  */
-@FeignClient("continent-flag")
+@FeignClient(url="http://continent-flag-service:8082",name = "continent-flag")
 public interface ContinentFlagClient {
     @GetMapping("/srvcfla/flag/{country}")
     ResponseEntity<ContinetFlagApiResponse<Flag>> getFlag(@PathVariable String country);
