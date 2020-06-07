@@ -5,7 +5,6 @@ import com.mygglo.countrycontinentflag.domain.Flag;
 import com.mygglo.countrycontinentflag.domain.dto.CountryDTO;
 import com.mygglo.countrycontinentflag.service.CountryService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/srvcfla")
-@RefreshScope
 public class CountryController {
     @Value("${country}")
     private String country;

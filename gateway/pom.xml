@@ -20,10 +20,12 @@
 	</properties>
 
 	<dependencies>
+		<!--
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -72,7 +74,7 @@
 				<configuration>
 					<allowInsecureRegistries>true</allowInsecureRegistries>
 					<to>
-						<image>registry.labs:5000/gateway:1.0.0</image>
+						<image>registry.labs:5000/gateway:2.0.2</image>
 					</to>
 				</configuration>
 			</plugin>

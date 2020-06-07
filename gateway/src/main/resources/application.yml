@@ -1,16 +1,24 @@
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
 spring:
   application:
     name:  gateway
   cloud:
-    consul:
-      discovery:
-        serviceName: ${spring.application.name}
-        instanceId: ${spring.application.name}:${random.value}
-        healthCheckPath: /actuator/health
-        healthCheckInterval: 20s
-        pre
-      host: 192.168.50.1
-      port: 8500
+#    consul:
+#      discovery:
+#        serviceName: ${spring.application.name}
+#        instanceId: ${spring.application.name}:${random.value}
+#        healthCheckPath: /actuator/health
+#        healthCheckInterval: 20s
+#        pre
+#      host: 192.168.50.1
+#      port: 8500
     gateway:
       globalcors:
         corsConfigurations:
@@ -19,10 +27,13 @@ spring:
             allowedMethods: "*"
       routes:
         - id: continent-lag
-          uri: lb://continent-flag
+          #uri: lb://continent-flag
+          uri: "http://continent-flag-service:8082"
           predicates:
             - Path=/srvcfla/**
         - id: lang-population
-          uri: lb://lang-population
+          #uri: lb://lang-population
+          uri: "http://lang-population-service:8083"
           predicates:
             - Path=/srvlapo/**
+
