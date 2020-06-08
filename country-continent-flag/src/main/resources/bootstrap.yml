@@ -5,3 +5,8 @@
 #        enabled: true
 #        service-id: cloud-config
 #      fail-fast: true
+spring:
+  cloud:
+    kubernetes:
+      config:
+        name: application-config
